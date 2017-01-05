@@ -79,12 +79,15 @@ class ViewController: ASViewController<ASDisplayNode> {
         let item = Datastore.titles.removeFirst()
         Datastore.titles.append(item)
         
+        let item2 = Datastore.titles.removeFirst()
+        Datastore.titles.append(item2)
+        
         // Update colletionNode
         let at = IndexPath(row: 0, section: 0)
-        let to = IndexPath(row: Datastore.titles.count - 1, section: 0)
+        let to = IndexPath(row: Datastore.titles.count - 2, section: 0)
         
         let at2 = IndexPath(row: 1, section: 0)
-        let to2 = IndexPath(row: Datastore.titles.count - 2, section: 0)
+        let to2 = IndexPath(row: Datastore.titles.count - 1, section: 0)
         
         var transform = CATransform3DIdentity
         transform.m34 = -1.0 / 500.0

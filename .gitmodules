@@ -1,3 +1,3 @@
 [submodule "InternalPods/AsyncDisplayKit"]
 	path = InternalPods/AsyncDisplayKit
-	url = https://github.com/facebook/AsyncDisplayKit.git
+url=https://github.com/harryworld/AsyncDisplayKit.git

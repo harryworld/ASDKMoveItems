@@ -95,7 +95,7 @@ class ViewController: ASViewController<ASDisplayNode> {
 extension ViewController: ASCollectionDataSource {
     
     func collectionNode(_ collectionNode: ASCollectionNode, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return Datastore.titles.count
     }
     
     func collectionNode(_ collectionNode: ASCollectionNode, nodeBlockForItemAt indexPath: IndexPath) -> ASCellNodeBlock {

@@ -76,19 +76,24 @@ class ViewController: ASViewController<ASDisplayNode> {
     func tapped(_ tap: UITapGestureRecognizer) {
         
         // Update data source
-        let item = Datastore.titles.removeFirst()
+        
+        // *** Follows the Rules of Batching *** //
+        Datastore.titles.remove(at: 4)
+        let item2 = Datastore.titles.remove(at: 2)
+        let item = Datastore.titles.remove(at: 1)
+        Datastore.titles.insert("A\nA\nA\nA\nA\nA", at: 0)
+        
         Datastore.titles.append(item)
-        
-        let item2 = Datastore.titles.removeFirst()
         Datastore.titles.append(item2)
-        
+        // *** Follows the Rules of Batching *** //
+      
         // Update colletionNode
-        let at = IndexPath(row: 0, section: 0)
+        let at = IndexPath(row: 1, section: 0)
         let to = IndexPath(row: Datastore.titles.count - 2, section: 0)
         
-        let at2 = IndexPath(row: 1, section: 0)
+        let at2 = IndexPath(row: 2, section: 0)
         let to2 = IndexPath(row: Datastore.titles.count - 1, section: 0)
-        
+      
         var transform = CATransform3DIdentity
         transform.m34 = -1.0 / 500.0
         collectionNode.view.layer.sublayerTransform = transform
@@ -96,6 +101,8 @@ class ViewController: ASViewController<ASDisplayNode> {
         collectionNode.performBatch(
             animated: true,
             updates: { [weak self] in
+                self?.collectionNode.deleteItems(at: [IndexPath(row: 4, section: 0)])
+                self?.collectionNode.insertItems(at: [IndexPath(row: 0, section: 0)])
                 self?.collectionNode.moveItem(at: at, to: to)
                 self?.collectionNode.moveItem(at: at2, to: to2)
             }, completion: nil)

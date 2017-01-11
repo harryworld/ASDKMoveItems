@@ -97,7 +97,11 @@ class ViewController: ASViewController<ASDisplayNode> {
         var transform = CATransform3DIdentity
         transform.m34 = -1.0 / 500.0
         collectionNode.view.layer.sublayerTransform = transform
-        
+      
+        if let node = collectionNode.nodeForItem(at: at2) {
+          print(node)
+        }
+      
         collectionNode.performBatch(
             animated: true,
             updates: { [weak self] in
@@ -105,7 +109,11 @@ class ViewController: ASViewController<ASDisplayNode> {
                 self?.collectionNode.insertItems(at: [IndexPath(row: 0, section: 0)])
                 self?.collectionNode.moveItem(at: at, to: to)
                 self?.collectionNode.moveItem(at: at2, to: to2)
-            }, completion: nil)
+          }, completion: { [weak self] finished in
+            if let node = self?.collectionNode.nodeForItem(at: to2) {
+              print(node)
+            }
+        })
         
     }
     

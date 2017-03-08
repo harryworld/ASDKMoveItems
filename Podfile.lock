@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
     :path: InternalPods/AsyncDisplayKit
 
 SPEC CHECKSUMS:
-  AsyncDisplayKit: 1585f6cd0531ae9b30476f5912f577b73ebcb0e4
+  AsyncDisplayKit: 61bf1a97c23f795afe7b3ae3c9c5935ec8fba7e6
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929

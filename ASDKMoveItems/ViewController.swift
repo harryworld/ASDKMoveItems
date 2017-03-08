@@ -21,6 +21,19 @@ enum Datastore {
         "Item Number 7",
         "Item Number 8",
         "Item Number 9",
+        "Item Number 10"
+    ]
+    
+    static var titlesLong: [String] = [
+        "Item Number 1\nlala",
+        "Item Number 2\nlolo\nlolo",
+        "Item Number 3\nLOLO\nLOLO\nLOLO",
+        "Item Number 4\nHAHA\nHAHA\nHAHA\nHAHA\nHAHA\nHAHA\nHAHA\nHAHA",
+        "Item Number 5",
+        "Item Number 6",
+        "Item Number 7",
+        "Item Number 8",
+        "Item Number 9",
         "Item Number 10",
         "Buy Groceries:\n\u{E836} Eggs\n\u{E836} Cheese\n\u{E836} Ham\n\u{E836} Chips",
         "Onboarding:\n\u{E836} Control Gestures ORGesture\n\u{E836} Bring in TDTouchDot code\n\u{E836} Start building new Onboarding",
